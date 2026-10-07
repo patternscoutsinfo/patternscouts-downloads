@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buy — PatternScouts</title>
+<meta name="description" content="Buy PatternScouts software. Pay by UPI; your key arrives by email.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html">Pattern<span>Scouts</span></a>
+    <nav>
+      <a href="index.html#software">All software</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <a class="back" id="back" href="index.html">&larr; Back</a>
+      <p class="eyebrow">Buy</p>
+      <h1 id="title">Loading…</h1>
+      <p class="lede" id="lede"></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="state" id="state">Loading…</div>
+
+      <div class="buy" id="buy" hidden>
+        <article class="card buy-step">
+          <p class="step-no">Step 1</p>
+          <h3>Pay <span id="amount"></span> by UPI</h3>
+          <p class="muted">Scan with GPay, PhonePe, Paytm or any UPI app. Please pay the exact amount.</p>
+          <div class="qr" id="qr" aria-label="UPI QR code"></div>
+          <p class="upi-row">
+            UPI ID <code id="upi-id"></code>
+            <button type="button" class="btn btn-ghost btn-small" id="copy-upi">Copy</button>
+          </p>
+          <p class="upi-row">Paying to <strong id="upi-name"></strong></p>
+          <a class="btn btn-primary open-app" id="open-app" href="#">Open my UPI app</a>
+        </article>
+
+        <article class="card buy-step">
+          <p class="step-no">Step 2</p>
+          <h3>Tell us it's paid</h3>
+          <form id="form" novalidate>
+            <label class="field">Your name
+              <input name="name" autocomplete="name" maxlength="120" required>
+            </label>
+            <label class="field">Email <span class="muted">— your key is sent here</span>
+              <input name="email" type="email" autocomplete="email" maxlength="200" required>
+            </label>
+            <label class="field">Mobile number
+              <input name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="16" required>
+            </label>
+            <label class="field">UPI transaction ID <span class="muted">— in your payment app, usually 12 digits</span>
+              <input name="ref" inputmode="numeric" autocomplete="off" maxlength="40" required>
+            </label>
+            <p class="form-error" id="error" role="alert" hidden></p>
+            <button class="btn btn-primary" type="submit" id="submit">I have paid — send my key</button>
+          </form>
+        </article>
+      </div>
+
+      <article class="card buy-done" id="done" hidden>
+        <h3>Thank you — we have your payment details.</h3>
+        <p>Your reference is <strong id="ref-out"></strong>.</p>
+        <p>We check the payment and email your key to <strong id="email-out"></strong>, usually within a few hours.
+           Then download Bird Flew from the <a href="index.html">home page</a>, sign in with the key, and install your software.</p>
+        <p class="muted" id="help-out"></p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>PatternScouts · <a id="support-link" href="index.html#contact">Get in touch</a></p>
+    <p>Prices shown in Indian rupees. Payment by UPI.</p>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/vendor/qrcode.min.js"></script>
+<script src="js/buy.js"></script>
+</body>
+</html>

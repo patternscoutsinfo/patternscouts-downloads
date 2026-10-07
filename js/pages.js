@@ -14,9 +14,10 @@
 (function (global) {
   "use strict";
 
-  var BESPOKE = {
-    crow: "crow.html"
-  };
+  /* Crow's hand-written crow.html is for Crow 1.x (its own download and
+     in-app payment). Crow 2.0 is bought on buy.html and installed from
+     Bird Flew, so it uses the generic page like every other product. */
+  var BESPOKE = {};
 
   global.PSPages = {
     /* The URL for a product's own page. */

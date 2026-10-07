@@ -51,8 +51,9 @@
         "</ul>";
     }
 
-    var cta = sellable
-      ? '<a class="btn btn-primary" href="index.html#contact">Request a key</a>'
+    var cta = sellable && Number(plan.price) > 0
+      ? '<a class="btn btn-primary" href="buy.html?p=' + encodeURIComponent(slug) +
+          '&plan=' + encodeURIComponent(plan.code) + '">Buy now</a>'
       : '<span class="btn" aria-disabled="true">Not on sale yet</span>';
 
     return (

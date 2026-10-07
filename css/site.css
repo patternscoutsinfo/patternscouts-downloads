@@ -327,3 +327,24 @@ a:focus-visible, button:focus-visible {
 /* "Download Bird Flew" in the hero */
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1rem; margin-top: 1.5rem; }
 .hero-actions .muted { color: var(--ink-soft); font-size: .95rem; }
+
+/* ----------------------------------------------------------------- buy */
+.buy { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; align-items: start; }
+.buy-step h3 { margin: 0 0 6px; }
+.step-no { font-family: var(--mono); font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin: 0 0 4px; }
+.muted { color: var(--ink-soft); font-size: .92rem; }
+.qr { width: 220px; max-width: 100%; margin: 16px auto; background: #fff; border: 1px solid var(--line); border-radius: 10px; }
+.qr svg { display: block; width: 100%; height: auto; }
+.upi-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 6px 0; }
+.upi-row code { font-family: var(--mono); background: var(--green-pale); padding: 3px 8px; border-radius: 6px; word-break: break-all; }
+.btn-small { padding: 5px 10px; font-size: .78rem; }
+.open-app { margin-top: 12px; text-align: center; }
+.field { display: flex; flex-direction: column; gap: 6px; margin: 0 0 14px; font-size: .95rem; font-weight: 500; }
+.field input {
+  font: inherit; font-weight: 400; padding: 10px 12px; border: 1px solid var(--line);
+  border-radius: 9px; background: #fff; color: var(--ink); min-width: 0;
+}
+.field input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+.form-error { color: var(--rust); font-size: .92rem; margin: 0 0 12px; }
+.buy-done p { margin: 8px 0; }
+@media (hover: hover) and (pointer: fine) { .open-app { display: none; } }
