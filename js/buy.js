@@ -1,5 +1,5 @@
 /* =====================================================================
-   The Buy page.
+   The checkout page.
 
    Reads ?p=slug&plan=code, asks bf_website_buy_info() for the price and
    the UPI ID, and shows a UPI QR code for exactly that amount. When the
@@ -21,7 +21,7 @@
   function fail(msg) {
     $("title").textContent = "This plan is not available";
     $("state").className = "state error";
-    $("state").textContent = msg;
+    $("state").innerHTML = A.escapeHtml(msg) + ' <a href="/#software">See all software</a>.';
   }
 
   function upiLink(info) {
@@ -37,31 +37,28 @@
     var price = A.money(info.amount, info.currency_symbol);
     document.title = "Buy " + info.product_name + " — PatternScouts";
     if (info.accent_colour) document.documentElement.style.setProperty("--accent", info.accent_colour);
-    $("back").href = "product.html?p=" + encodeURIComponent(info.product);
+    $("back").href = "/product.html?p=" + encodeURIComponent(info.product);
     $("title").textContent = info.product_name + " — " + info.plan_name;
-    $("lede").textContent = price + " for " + A.planPeriod(info.days) + ". Your key arrives by email.";
-    $("amount").textContent = price;
+    $("lede").textContent = price + " for " + A.planPeriod(info.days) + ". Pay by UPI; your key arrives by email.";
+    document.querySelectorAll("[data-amount]").forEach(function (el) { el.textContent = price; });
+    $("sum-product").textContent = info.product_name;
+    $("sum-plan").textContent = info.plan_name;
+    $("sum-period").textContent = A.planPeriod(info.days);
     $("upi-id").textContent = info.upi_id;
     $("upi-name").textContent = info.upi_name;
 
     var link = upiLink(info);
     $("open-app").href = link;
-
     var qr = qrcode(0, "M");
     qr.addData(link);
     qr.make();
-    $("qr").innerHTML = qr.createSvgTag({ cellSize: 5, margin: 3, scalable: true });
+    $("qr").innerHTML = qr.createSvgTag({ cellSize: 5, margin: 2, scalable: true });
 
     $("copy-upi").addEventListener("click", function () {
-      var done = function () { $("copy-upi").textContent = "Copied"; };
+      var b = $("copy-upi");
+      var done = function () { b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy"; }, 2000); };
       if (navigator.clipboard) navigator.clipboard.writeText(info.upi_id).then(done, function () {});
     });
-
-    if (info.support_email) {
-      $("support-link").href = "mailto:" + info.support_email;
-      $("support-link").textContent = info.support_email;
-      $("help-out").textContent = "Questions? Write to " + info.support_email + " with your reference.";
-    }
 
     $("state").hidden = true;
     $("buy").hidden = false;
@@ -85,6 +82,8 @@
       $("email-out").textContent = r.email;
       $("buy").hidden = true;
       $("done").hidden = false;
+      $("title").textContent = "Payment details received";
+      $("lede").textContent = "";
       window.scrollTo(0, 0);
     }).catch(function (e) {
       err.textContent = /rpc .* failed/.test(e.message)
@@ -96,10 +95,7 @@
     });
   }
 
-  if (!slug || !plan) {
-    fail("No plan chosen. Go back and pick one.");
-    return;
-  }
+  if (!slug || !plan) { fail("No plan chosen."); return; }
 
   $("form").addEventListener("submit", submit);
 

@@ -1,80 +1,209 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-IN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PatternScouts — software for the work you keep repeating</title>
-<meta name="description" content="PatternScouts builds desktop software for the repetitive parts of working with data. Crow Data Analytics, Eagle BI Presentation, and more to come.">
+<title>PatternScouts — Windows software for repeated spreadsheet work</title>
+<meta name="description" content="Focused Windows apps that do your repeated Excel and office jobs in seconds. Works offline, your files stay on your PC. Pay by UPI.">
+<link rel="canonical" href="https://patternscoutsinfo.in/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PatternScouts">
+<meta property="og:title" content="PatternScouts — Windows software for repeated spreadsheet work">
+<meta property="og:description" content="Focused Windows apps that do your repeated Excel and office jobs in seconds. Works offline, your files stay on your PC. Pay by UPI.">
+<meta property="og:url" content="https://patternscoutsinfo.in/">
+<meta name="theme-color" content="#17624F">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
-
+<a class="sr-only" href="#main">Skip to content</a>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="index.html">Pattern<span>Scouts</span></a>
-    <nav>
-      <a href="#software">Software</a>
-      <a href="#combo">Combo</a>
-      <a href="#contact">Contact</a>
+    <a class="brand" href="/"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" style="fill:var(--brand)"/><path d="M8 22.5 13.5 14l5 4.5L24 9" style="fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round"/><circle cx="24" cy="9" r="2.8" style="fill:var(--saffron)"/></svg><span>PatternScouts</span></a>
+    <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="/#software">Software</a>
+      <a href="/#how">How it works</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/contact.html">Contact</a>
+      <a class="btn btn-primary btn-small" href="/download.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download</a>
     </nav>
   </div>
 </header>
-
-<main>
-  <section class="hero">
-    <div class="wrap">
-      <p class="eyebrow">PatternScouts</p>
-      <h1>Software for the work you keep repeating.</h1>
-      <p class="lede">
-        Every one of these started as a job somebody was doing by hand, every week,
-        in a spreadsheet. Pick the one that matches your desk — or take all of them
-        together for less.
-      </p>
-      <p class="hero-actions">
-        <a class="btn btn-primary" id="get-birdflew"
-           href="https://github.com/patternscoutsinfo/patternscouts-downloads/releases">Download Bird Flew for Windows</a>
-        <span class="muted" id="get-birdflew-note">One app opens all your PatternScouts software.</span>
-      </p>
-    </div>
-  </section>
-
-  <section class="section" id="software">
-    <div class="wrap">
-      <h2>All our software</h2>
-      <p class="sub">Click any one to see what it is built for, and what it costs on its own.</p>
-      <div class="grid" id="products">
-        <div class="state">Loading the catalogue…</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="combo">
-    <div class="wrap">
-      <h2>Buy more than one</h2>
-      <p class="sub">Everything together, for less than the parts.</p>
-      <div id="bundles">
-        <div class="state">Loading offers…</div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="foot" id="contact">
+<main id="main">
+<section class="hero">
   <div class="wrap">
-    <p>
-      PatternScouts · <a id="support-link" href="mailto:patternscoutsinfo@gmail.com">patternscoutsinfo@gmail.com</a>
-    </p>
-    <p>Prices shown in Indian rupees. Payment by UPI.</p>
+    <div>
+      <p class="eyebrow">Windows software &middot; Made in India</p>
+      <h1>The spreadsheet work you repeat every week, <em>done in seconds.</em></h1>
+      <p class="lede">PatternScouts makes focused desktop apps for the office jobs people still do by hand &mdash; combining monthly files, reconciling ledgers, finding duplicates, building reports. They run on your own computer, and your files never leave it.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#software">Explore the software</a>
+        <a class="btn btn-ghost" href="/download.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download Bird Flew</a>
+      </div>
+      <p class="hero-note"><span>Works offline</span><span>Pay by UPI</span><span>Windows 10 &amp; 11</span></p>
+    </div>
+    <div class="mock" aria-hidden="true">
+      <div class="mock-bar"><i></i><i></i><i></i><b>Crow &mdash; New analysis</b></div>
+      <div class="mock-body">
+        <div class="mock-files"><span class="chip">Sales_April.xlsx</span><span class="chip">Sales_May.xlsx</span><span class="chip">Sales_June.xlsx</span></div>
+        <div class="mock-ask">Combine these and show total sales by region</div>
+        <table class="mock-table">
+          <thead><tr><th>Region</th><th>Invoices</th><th>Total (&#8377;)</th></tr></thead>
+          <tbody>
+            <tr><td>North</td><td>1,284</td><td>18,42,300</td></tr>
+            <tr><td>West</td><td>1,067</td><td>15,96,750</td></tr>
+            <tr><td>South</td><td>942</td><td>13,08,420</td></tr>
+            <tr><td>East</td><td>611</td><td>8,77,940</td></tr>
+            <tr><td>All regions</td><td>3,904</td><td>56,25,410</td></tr>
+          </tbody>
+        </table>
+        <div class="mock-done"><strong>Done</strong><span>3 files &middot; 3,904 rows &middot; nothing uploaded</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust" aria-label="Why PatternScouts">
+  <div class="wrap">
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg><div><strong>Works offline</strong><span>The work happens on your PC. Internet is only for activating and updates.</span></div></div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><div><strong>Your files stay yours</strong><span>Nothing you open is uploaded anywhere. Ever.</span></div></div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="m11 12 9-9M17 6l3 3M15 8l2 2"/></svg><div><strong>One key, every app</strong><span>Bird Flew installs and updates all your PatternScouts software.</span></div></div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10 18h4M9.5 9.5l2 2 3.5-4"/></svg><div><strong>Pay by UPI</strong><span>GPay, PhonePe, Paytm or any UPI app. Your key comes by email.</span></div></div>
+  </div>
+</section>
+
+<section class="section" id="software">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The software</p>
+      <h2>Pick the job you want off your desk</h2>
+      <p>Each app does one kind of work very well. Start with the one you need today and add more whenever you like &mdash; one key covers them all.</p>
+    </div>
+    <div class="grid" id="products">
+      <div class="skeleton"></div><div class="skeleton"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="how">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">How it works</p>
+      <h2>From payment to working software in four steps</h2>
+      <p>No account to create, no card details, no subscription that renews behind your back.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Choose your plan</h3><p>Open the software you want and pick a plan &mdash; a month, a year, or a low-cost trial.</p></div>
+      <div class="step"><h3>Pay by UPI</h3><p>Scan the QR code with GPay, PhonePe, Paytm or any UPI app, then tell us the transaction ID.</p></div>
+      <div class="step"><h3>Get your key</h3><p>We confirm the payment and email your key, usually within a few hours.</p></div>
+      <div class="step"><h3>Install with Bird Flew</h3><p>Download Bird Flew, sign in with your key, and install your software in one click.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Bird Flew</p>
+      <h2>One small app opens all your software</h2>
+      <p class="lede">Bird Flew is free. Install it once, sign in with your key, and it shows every PatternScouts app your key includes.</p>
+      <ul class="checks">
+        <li>Install and update each app with one click.</li>
+        <li>Every download is checked against its size, its fingerprint and our digital signature before it is installed.</li>
+        <li>Keeps working offline once your key is activated.</li>
+        <li>One key for every app you buy &mdash; now and later.</li>
+      </ul>
+      <a class="btn btn-primary" href="/download.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download Bird Flew</a>
+    </div>
+    <div class="launcher" aria-hidden="true">
+      <h3><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" style="fill:var(--brand)"/><path d="M8 22.5 13.5 14l5 4.5L24 9" style="fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round"/><circle cx="24" cy="9" r="2.8" style="fill:var(--saffron)"/></svg> Bird Flew</h3>
+      <div class="launcher-app"><span class="ico">&#128038;</span><div><strong>Crow Data Analytics</strong><span>Installed &middot; up to date</span></div><em>Open</em></div>
+      <div class="launcher-app"><span class="ico">&#129413;</span><div><strong>Eagle BI Presentation</strong><span>Coming soon</span></div><em class="dim">Soon</em></div>
+      <div class="launcher-app"><span class="ico">&#10024;</span><div><strong>Your next tool</strong><span>Added to the same key</span></div><em class="dim">Later</em></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="combo" hidden style="padding-top:0">
+  <div class="wrap"><div id="bundles"></div></div>
+</section>
+
+<section class="section section-alt" id="faq">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="eyebrow">Questions</p>
+      <h2>Good to know before you buy</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Do I need the internet to use the software?</summary><p>Only to activate your key, download the software and get updates. The work itself &mdash; opening your files and producing results &mdash; happens on your computer, offline.</p></details>
+      <details><summary>Are my files uploaded anywhere?</summary><p>No. Your spreadsheets are opened and processed on your own computer. We only keep what is needed to run your licence: your name, email, mobile number and which computers your key is activated on.</p></details>
+      <details><summary>Which computers does it run on?</summary><p>Windows 10 or Windows 11, 64-bit. 8 GB of memory is enough; on computers with more memory the built-in AI assistant automatically uses a larger, smarter model.</p></details>
+      <details><summary>How do I pay?</summary><p>By UPI &mdash; GPay, PhonePe, Paytm, BHIM or your bank's app. Scan the QR code on the buy page, pay the exact amount, and enter the UPI transaction ID. Card payments will be added later.</p></details>
+      <details><summary>When will I receive my key?</summary><p>As soon as we have matched your payment &mdash; usually within a few hours, and always within one business day. It is emailed to the address you enter.</p></details>
+      <details><summary>Can I use one key on more than one computer?</summary><p>Each plan says how many computers it covers. If you change computers, you can move your key; get in touch and we will help.</p></details>
+      <details><summary>What if it does not work for me?</summary><p>Write to us first &mdash; most problems are fixed in one reply. If we cannot make it work on your computer, see our <a href="/refunds.html">refund policy</a>.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>Give the repetitive work to the software</h2>
+      <p>Start with the job that takes most of your week. Most people get it done in their first ten minutes.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#software">See the software</a>
+        <a class="btn btn-ghost" href="/contact.html">Ask us a question</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" style="fill:var(--brand)"/><path d="M8 22.5 13.5 14l5 4.5L24 9" style="fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round"/><circle cx="24" cy="9" r="2.8" style="fill:var(--saffron)"/></svg><span>PatternScouts</span></a>
+        <p style="margin-top:14px">Focused Windows software for the office work people repeat every week. It runs on your own computer, and your files stay there.</p>
+      </div>
+      <div>
+        <h4>Software</h4>
+        <ul>
+          <li><a href="/#software">All software</a></li>
+          <li><a href="/download.html">Download Bird Flew</a></li>
+          <li><a href="/#how">How buying works</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li><a href="/contact.html">Contact us</a></li>
+          <li><a href="/#faq">Questions</a></li>
+          <li><a href="mailto:patternscoutsinfo@gmail.com">patternscoutsinfo@gmail.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Policies</h4>
+        <ul>
+          <li><a href="/terms.html">Terms of use</a></li>
+          <li><a href="/privacy.html">Privacy policy</a></li>
+          <li><a href="/refunds.html">Refund policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; <span data-year>2026</span> PatternScouts. Made in India.</span>
+      <span>Prices in Indian rupees &middot; Pay by UPI</span>
+    </div>
   </div>
 </footer>
-
-<script src="js/config.js"></script>
-<script src="js/api.js"></script>
-<script src="js/pages.js"></script>
-<script src="js/catalogue.js"></script>
-<script src="js/download.js"></script>
+<script src="/js/site.js" defer></script>
+<script src="/js/config.js" defer></script>
+<script src="/js/api.js" defer></script>
+<script src="/js/home.js" defer></script>
 </body>
 </html>

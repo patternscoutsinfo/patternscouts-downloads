@@ -1,99 +1,163 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-IN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Buy — PatternScouts</title>
+<title>Checkout — PatternScouts</title>
 <meta name="description" content="Buy PatternScouts software. Pay by UPI; your key arrives by email.">
-
+<link rel="canonical" href="https://patternscoutsinfo.in/buy.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PatternScouts">
+<meta property="og:title" content="Checkout — PatternScouts">
+<meta property="og:description" content="Buy PatternScouts software. Pay by UPI; your key arrives by email.">
+<meta property="og:url" content="https://patternscoutsinfo.in/buy.html">
+<meta name="theme-color" content="#17624F">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
-
+<a class="sr-only" href="#main">Skip to content</a>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="index.html">Pattern<span>Scouts</span></a>
-    <nav>
-      <a href="index.html#software">All software</a>
-      <a href="index.html#contact">Contact</a>
+    <a class="brand" href="/"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" style="fill:var(--brand)"/><path d="M8 22.5 13.5 14l5 4.5L24 9" style="fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round"/><circle cx="24" cy="9" r="2.8" style="fill:var(--saffron)"/></svg><span>PatternScouts</span></a>
+    <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="/#software">Software</a>
+      <a href="/#how">How it works</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/contact.html">Contact</a>
+      <a class="btn btn-primary btn-small" href="/download.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download</a>
     </nav>
   </div>
 </header>
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <a class="back" id="back" href="/#software">&larr; Back</a>
+    <p class="eyebrow">Checkout</p>
+    <h1 id="title">Loading&hellip;</h1>
+    <p class="lede" id="lede"></p>
+  </div>
+</section>
 
-<main>
-  <section class="hero">
-    <div class="wrap">
-      <a class="back" id="back" href="index.html">&larr; Back</a>
-      <p class="eyebrow">Buy</p>
-      <h1 id="title">Loading…</h1>
-      <p class="lede" id="lede"></p>
-    </div>
-  </section>
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="state" id="state">Loading&hellip;</div>
 
-  <section class="section">
-    <div class="wrap">
-      <div class="state" id="state">Loading…</div>
-
-      <div class="buy" id="buy" hidden>
-        <article class="card buy-step">
-          <p class="step-no">Step 1</p>
-          <h3>Pay <span id="amount"></span> by UPI</h3>
-          <p class="muted">Scan with GPay, PhonePe, Paytm or any UPI app. Please pay the exact amount.</p>
-          <div class="qr" id="qr" aria-label="UPI QR code"></div>
-          <p class="upi-row">
-            UPI ID <code id="upi-id"></code>
-            <button type="button" class="btn btn-ghost btn-small" id="copy-upi">Copy</button>
-          </p>
-          <p class="upi-row">Paying to <strong id="upi-name"></strong></p>
-          <a class="btn btn-primary open-app" id="open-app" href="#">Open my UPI app</a>
+    <div class="checkout" id="buy" hidden>
+      <div class="pay-steps">
+        <article class="card">
+          <p class="step-label">Step 1 of 2</p>
+          <h2 style="font-size:1.5rem">Pay <span data-amount></span> by UPI</h2>
+          <div class="pay-grid">
+            <div class="qr" id="qr" role="img" aria-label="UPI QR code for this payment"></div>
+            <div>
+              <p class="muted">Scan with any UPI app and pay the <strong>exact amount</strong>.</p>
+              <div class="apps"><span>GPay</span><span>PhonePe</span><span>Paytm</span><span>BHIM</span><span>Bank apps</span></div>
+              <p class="small muted" style="margin:16px 0 4px">Or pay to this UPI ID</p>
+              <div class="upi"><code id="upi-id"></code><button type="button" class="btn btn-ghost btn-small" id="copy-upi">Copy</button></div>
+              <p class="small muted" style="margin:0">Name shown in your app: <strong id="upi-name"></strong></p>
+              <a class="btn btn-primary btn-block open-app" id="open-app" href="#">Pay with my UPI app</a>
+            </div>
+          </div>
         </article>
 
-        <article class="card buy-step">
-          <p class="step-no">Step 2</p>
-          <h3>Tell us it's paid</h3>
-          <form id="form" novalidate>
-            <label class="field">Your name
-              <input name="name" autocomplete="name" maxlength="120" required>
-            </label>
-            <label class="field">Email <span class="muted">— your key is sent here</span>
-              <input name="email" type="email" autocomplete="email" maxlength="200" required>
-            </label>
-            <label class="field">Mobile number
-              <input name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="16" required>
-            </label>
-            <label class="field">UPI transaction ID <span class="muted">— in your payment app, usually 12 digits</span>
-              <input name="ref" inputmode="numeric" autocomplete="off" maxlength="40" required>
-            </label>
+        <article class="card">
+          <p class="step-label">Step 2 of 2</p>
+          <h2 style="font-size:1.5rem">Tell us you have paid</h2>
+          <form class="form" id="form" novalidate>
+            <div class="form-row">
+              <label class="field">Your name<input name="name" autocomplete="name" maxlength="120" required></label>
+              <label class="field">Mobile number<input name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="16" required></label>
+            </div>
+            <label class="field">Email <span class="hint">Your key is sent here &mdash; please check it carefully.</span>
+              <input name="email" type="email" autocomplete="email" maxlength="200" required></label>
+            <label class="field">UPI transaction ID <span class="hint">In your UPI app's payment details. Usually 12 digits (UTR / UPI Ref. No.).</span>
+              <input name="ref" inputmode="numeric" autocomplete="off" maxlength="40" required></label>
             <p class="form-error" id="error" role="alert" hidden></p>
-            <button class="btn btn-primary" type="submit" id="submit">I have paid — send my key</button>
+            <button class="btn btn-primary btn-block" type="submit" id="submit">I have paid &mdash; send my key</button>
+            <p class="small muted" style="margin:0">By buying you agree to our <a href="/terms.html">terms</a> and <a href="/refunds.html">refund policy</a>.</p>
           </form>
         </article>
       </div>
 
-      <article class="card buy-done" id="done" hidden>
-        <h3>Thank you — we have your payment details.</h3>
-        <p>Your reference is <strong id="ref-out"></strong>.</p>
-        <p>We check the payment and email your key to <strong id="email-out"></strong>, usually within a few hours.
-           Then download Bird Flew from the <a href="index.html">home page</a>, sign in with the key, and install your software.</p>
-        <p class="muted" id="help-out"></p>
-      </article>
+      <aside class="card summary" aria-label="Order summary">
+        <h3>Order summary</h3>
+        <dl>
+          <div><dt>Software</dt><dd id="sum-product"></dd></div>
+          <div><dt>Plan</dt><dd id="sum-plan"></dd></div>
+          <div><dt>Access for</dt><dd id="sum-period"></dd></div>
+          <div class="total"><dt>Total</dt><dd data-amount></dd></div>
+        </dl>
+        <div class="next">
+          <strong>What happens next</strong>
+          <ol>
+            <li>We match your UPI payment.</li>
+            <li>Your key arrives by email, usually within a few hours.</li>
+            <li>Download Bird Flew, sign in, install.</li>
+          </ol>
+        </div>
+      </aside>
     </div>
-  </section>
-</main>
 
+    <article class="card done-card" id="done" hidden>
+      <div class="big-check" aria-hidden="true">&#10003;</div>
+      <h2>Thank you &mdash; we have your payment details</h2>
+      <p>Your reference is <strong id="ref-out"></strong>.</p>
+      <p class="muted">We will check the payment and email your key to <strong id="email-out"></strong>, usually within a few hours. Meanwhile you can download Bird Flew, so it is ready when the key arrives.</p>
+      <div class="hero-actions" style="justify-content:center">
+        <a class="btn btn-primary" href="/download.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download Bird Flew</a>
+        <a class="btn btn-ghost" href="/contact.html">Contact us</a>
+      </div>
+    </article>
+  </div>
+</section>
+</main>
 <footer class="foot">
   <div class="wrap">
-    <p>PatternScouts · <a id="support-link" href="index.html#contact">Get in touch</a></p>
-    <p>Prices shown in Indian rupees. Payment by UPI.</p>
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" style="fill:var(--brand)"/><path d="M8 22.5 13.5 14l5 4.5L24 9" style="fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round"/><circle cx="24" cy="9" r="2.8" style="fill:var(--saffron)"/></svg><span>PatternScouts</span></a>
+        <p style="margin-top:14px">Focused Windows software for the office work people repeat every week. It runs on your own computer, and your files stay there.</p>
+      </div>
+      <div>
+        <h4>Software</h4>
+        <ul>
+          <li><a href="/#software">All software</a></li>
+          <li><a href="/download.html">Download Bird Flew</a></li>
+          <li><a href="/#how">How buying works</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li><a href="/contact.html">Contact us</a></li>
+          <li><a href="/#faq">Questions</a></li>
+          <li><a href="mailto:patternscoutsinfo@gmail.com">patternscoutsinfo@gmail.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Policies</h4>
+        <ul>
+          <li><a href="/terms.html">Terms of use</a></li>
+          <li><a href="/privacy.html">Privacy policy</a></li>
+          <li><a href="/refunds.html">Refund policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; <span data-year>2026</span> PatternScouts. Made in India.</span>
+      <span>Prices in Indian rupees &middot; Pay by UPI</span>
+    </div>
   </div>
 </footer>
-
-<script src="js/config.js"></script>
-<script src="js/api.js"></script>
-<script src="js/vendor/qrcode.min.js"></script>
-<script src="js/buy.js"></script>
+<script src="/js/site.js" defer></script>
+<script src="/js/config.js" defer></script>
+<script src="/js/api.js" defer></script>
+<script src="/js/vendor/qrcode.min.js" defer></script>
+<script src="/js/buy.js" defer></script>
 </body>
 </html>
