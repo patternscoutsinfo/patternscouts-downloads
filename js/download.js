@@ -16,9 +16,18 @@
   fetch("https://api.github.com/repos/" + repo + "/releases?per_page=30")
     .then(function (r) { return r.ok ? r.json() : []; })
     .then(function (list) {
-      var rel = (list || []).find(function (x) {
+      // the highest version, whatever order GitHub lists them in
+      var ver = function (x) { return (x.tag_name.match(/\d+/g) || []).map(Number); };
+      var newer = function (a, b) {
+        var p = ver(a), q = ver(b);
+        for (var i = 0; i < Math.max(p.length, q.length); i++) {
+          if ((p[i] || 0) !== (q[i] || 0)) return (p[i] || 0) > (q[i] || 0) ? a : b;
+        }
+        return a;
+      };
+      var rel = (list || []).filter(function (x) {
         return !x.draft && !x.prerelease && /^birdflew-v/.test(x.tag_name || "");
-      });
+      }).reduce(function (best, x) { return best ? newer(best, x) : x; }, null);
       if (!rel) return;
       var assets = rel.assets || [];
       var asset = assets.find(function (a) { return /setup\.exe$/i.test(a.name); }) ||
